@@ -1,0 +1,39 @@
+package com.tts.UsersAPI;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "USER_TBL")
+
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Getter
+	@Setter
+	private Integer id;
+	@Getter
+	@Setter
+	private String first_name;
+	@Getter
+	@Setter
+	private String last_name;
+	@Getter
+	@Setter
+	private String state;
+	
+}

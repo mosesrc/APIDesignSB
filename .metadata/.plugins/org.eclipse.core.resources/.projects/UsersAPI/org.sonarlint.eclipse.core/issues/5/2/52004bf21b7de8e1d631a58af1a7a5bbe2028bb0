@@ -1,0 +1,25 @@
+
+…	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İí‚Æùÿÿÿÿ8ù–…¿¶0HÑRMINORZ
+CODE_SMELL
+†	java:S116"TRename this field "last_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šø´¯8¾¤¹¾¶0HÍRMINORZ
+CODE_SMELL
+…	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯½¸Šøÿÿÿÿ8ù–…¿¶0HĞRMINORZ
+CODE_SMELL
+ˆ	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯½¸Šøÿÿÿÿ8ù–…¿¶0H×RMINORZ
+CODE_SMELL
+€	java:S100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìşæ8ù–…¿¶0HÏRMINORZ
+CODE_SMELL
+]
+java:S1128"*Remove this unused import 'lombok.Getter'.(ùÒµÙ8ù–…¿¶0HÓRMINORZ
+CODE_SMELL
+‚	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²å8ù–…¿¶0HØRMINORZ
+CODE_SMELL
+‰	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(  ñäúÿÿÿÿH#RMINORZ
+CODE_SMELL
+‡	java:S116"URename this field "first_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è•Ûì8½¤¹¾¶0HÉRMINORZ
+CODE_SMELL
+	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼²å8ù–…¿¶0HÒRMINORZ
+CODE_SMELL
+]
+java:S1128"*Remove this unused import 'lombok.Setter'.(ó¸çµ8ù–…¿¶0HÕRMINORZ
+CODE_SMELL

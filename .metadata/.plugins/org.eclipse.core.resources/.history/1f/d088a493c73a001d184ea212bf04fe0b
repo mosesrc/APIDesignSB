@@ -1,0 +1,5 @@
+package com.tts.UsersAPI;
+
+public interface UserRespositoy {
+
+}

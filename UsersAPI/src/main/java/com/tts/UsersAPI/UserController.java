@@ -1,0 +1,79 @@
+package com.tts.UsersAPI;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	private UserRepository repository;
+	
+	@SuppressWarnings("unchecked")
+	@GetMapping("/users")
+	public ResponseEntity<List<User>> getUsers(@RequestParam(value="state", required=false) String state) {
+		if (state != null) {
+			return (ResponseEntity<List<User>>) repository.findByState(state);
+		}
+		List<User> users = (List<User>) repository.findAll();
+		return new ResponseEntity<>(users, HttpStatus.OK);
+	}
+	
+	@GetMapping("/users/{id}")
+	public ResponseEntity<Optional<User>> getUserById(@PathVariable(value="id") Long id) {
+		if(id == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		Optional<User> user = repository.findById(id);
+		return new ResponseEntity<>(user, HttpStatus.OK);
+	}
+	
+	@PostMapping("/users")
+	public ResponseEntity<Void> createUser(@RequestBody @Valid User user, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		repository.save(user); 
+		return new ResponseEntity<>(HttpStatus.CREATED);
+		
+		
+	}
+	
+	@PutMapping("users/{id}")
+	public ResponseEntity<Void> updateUser(@PathVariable(value="id") Long id, @RequestBody @Valid User user, BindingResult bindingResult) {
+		if(id == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		if(bindingResult.hasErrors()) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
+		repository.save(user);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	@DeleteMapping("users/{id}") 
+	public ResponseEntity<Void> deleteUser(@PathVariable(value="id") Long id) {
+		if(id == null) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		repository.deleteById(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+}

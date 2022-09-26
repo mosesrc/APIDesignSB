@@ -1,0 +1,8 @@
+package com.tts.UsersAPI;
+
+public class User {
+	private int id;
+	private string firstName;
+	private string lastName;
+	private string state;
+}

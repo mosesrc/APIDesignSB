@@ -1,0 +1,6 @@
+package com.tts.UsersAPI;
+
+@Respository
+public class UserRespository extends CrudRepository {
+
+}
